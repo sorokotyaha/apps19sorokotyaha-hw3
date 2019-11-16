@@ -61,15 +61,15 @@ public class SmartArrayApp {
         //Object[] result = studentSmartArray.toArray();
         //return Arrays.copyOf(result, result.length, String[].class);
         ArrayList<String> studentsList = new ArrayList<String>();
-        for (int i = 0; i < students.length; i++){
-            if (students[i].getGPA() >= 4 && students[i].getYear() == 2){
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getGPA() >= 4 && students[i].getYear() == 2) {
                 studentsList.add(students[i].getSurname() + " " + students[i].getName());
             }
         }
         Collections.sort(studentsList);
         List<String> studList = studentsList.stream().distinct().collect(Collectors.toList());
         String[] studentsArray = new String[studList.size()];
-        for (int i = 0; i < studList.size(); i++){
+        for (int i = 0; i < studList.size(); i++) {
             studentsArray[i] = studList.get(i);
         }
         return studentsArray;

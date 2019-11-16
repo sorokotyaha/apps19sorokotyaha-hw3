@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73b4ac29-b849-4bff-a689-13c75535534d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/SmartArrayApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/SmartArrayApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/BaseArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/BaseArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/DistinctDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/DistinctDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/FilterDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/FilterDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/MapDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/MapDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/SortDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/SortDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ua/edu/ucu/SmartArrayAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ua/edu/ucu/SmartArrayAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ua/edu/ucu/SmartArrayAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ua/edu/ucu/SmartArrayAppTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +141,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

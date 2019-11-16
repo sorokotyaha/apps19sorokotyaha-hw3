@@ -9,10 +9,10 @@ public class MapDecorator extends SmartArrayDecorator {
 
     private Object[] arr;
 
-    public  MapDecorator(SmartArray sa, MyFunction func){
+    public MapDecorator(SmartArray sa, MyFunction func) {
         super(sa);
         Object[] objectArray = sa.toArray();
-        for (int i = 0; i < objectArray.length; i++){
+        for (int i = 0; i < objectArray.length; i++) {
             objectArray[i] = func.apply(objectArray[i]);
         }
         this.arr = objectArray;

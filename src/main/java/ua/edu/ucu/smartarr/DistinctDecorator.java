@@ -9,16 +9,16 @@ import java.util.stream.Collectors;
 // Remove duplicates from SmartArray. Use method equals() to compare objects
 public class DistinctDecorator extends SmartArrayDecorator {
 
-    public DistinctDecorator(SmartArray smartarray){
+    public DistinctDecorator(SmartArray smartarray) {
         super(smartarray);
         this.smartArray = getUniqueValues();
     }
 
 
-     private SmartArray getUniqueValues() {
-         List<Object> list = Arrays.asList(this.smartArray.toArray());
-         List<Object> deduped = list.stream().distinct().collect(Collectors.toList());
-         Object[] unique = deduped.toArray();
+    private SmartArray getUniqueValues() {
+        List<Object> list = Arrays.asList(this.smartArray.toArray());
+        List<Object> deduped = list.stream().distinct().collect(Collectors.toList());
+        Object[] unique = deduped.toArray();
 
         return new BaseArray(unique);
 
