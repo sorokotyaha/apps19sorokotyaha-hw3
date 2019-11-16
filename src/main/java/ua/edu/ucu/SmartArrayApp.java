@@ -1,15 +1,21 @@
 package ua.edu.ucu;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
+import ua.edu.ucu.smartarr.*;
 
 public class SmartArrayApp {
 
     public static Integer[]
-            filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
-                
+    filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
+
         MyPredicate pr = new MyPredicate() {
             @Override
             public boolean test(Object t) {
@@ -49,11 +55,23 @@ public class SmartArrayApp {
     }
 
     public static String[]
-            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
+    findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(Student[] students) {
 
         // Hint: to convert Object[] to String[] - use the following code
         //Object[] result = studentSmartArray.toArray();
         //return Arrays.copyOf(result, result.length, String[].class);
-        return null;
+        ArrayList<String> studentsList = new ArrayList<String>();
+        for (int i = 0; i < students.length; i++){
+            if (students[i].getGPA() >= 4 && students[i].getYear() == 2){
+                studentsList.add(students[i].getSurname() + " " + students[i].getName());
+            }
+        }
+        Collections.sort(studentsList);
+        List<String> studList = studentsList.stream().distinct().collect(Collectors.toList());
+        String[] studentsArray = new String[studList.size()];
+        for (int i = 0; i < studList.size(); i++){
+            studentsArray[i] = studList.get(i);
+        }
+        return studentsArray;
     }
 }
