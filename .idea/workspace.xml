@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73b4ac29-b849-4bff-a689-13c75535534d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/SmartArrayApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/SmartArrayApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/MapDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/smartarr/MapDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ua/edu/ucu/SmartArrayAppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ua/edu/ucu/SmartArrayAppTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/functions/MyComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/edu/ucu/functions/MyComparator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
