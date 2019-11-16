@@ -6,9 +6,10 @@ import java.util.Arrays;
 public class BaseArray implements SmartArray {
     protected Object[] myArray;
 
-    public BaseArray(){}
+    public BaseArray() {
+    }
 
-    public BaseArray(Object[] mass){
+    public BaseArray(Object[] mass) {
         this.myArray = mass;
     }
 
