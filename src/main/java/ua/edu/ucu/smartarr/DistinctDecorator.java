@@ -3,41 +3,38 @@ package ua.edu.ucu.smartarr;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 // Remove duplicates from SmartArray. Use method equals() to compare objects
 public class DistinctDecorator extends SmartArrayDecorator {
+    private int size;
+    private Object[] unique;
 
     public DistinctDecorator(SmartArray smartarray) {
         super(smartarray);
-        this.smartArray = getUniqueValues();
+        this.unique = this.getUniqueValues();
+        this.size = this.unique.length;
     }
 
-
-    private SmartArray getUniqueValues() {
+    private Object[] getUniqueValues() {
         List<Object> list = Arrays.asList(this.smartArray.toArray());
-        List<Object> deduped = list.stream().distinct().collect(Collectors.toList());
-        Object[] unique = deduped.toArray();
-
-        return new BaseArray(unique);
-
+        return list.stream().distinct().toArray();
     }
 
     @Override
     public Object[] toArray() {
-        return Arrays.copyOf(this.smartArray.toArray(), this.smartArray.size());
+        return Arrays.copyOf(this.unique, this.size);
     }
 
 
     @Override
     public String operationDescription() {
-        return null;
+        return "\nCleared from repeated values." + this.smartArray.operationDescription();
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
 }

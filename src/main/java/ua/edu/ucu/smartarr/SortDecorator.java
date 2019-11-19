@@ -7,26 +7,28 @@ import java.util.Arrays;
 // Sorts elements using MyComparator to compare them
 public class SortDecorator extends SmartArrayDecorator {
 
+    private int size;
     private Object[] arr;
 
     public SortDecorator(SmartArray sa, MyComparator mcp) {
         super(sa);
         this.arr = Arrays.stream(sa.toArray()).sorted(mcp).toArray();
+        this.size = this.arr.length;
     }
 
 
     @Override
     public Object[] toArray() {
-        return Arrays.copyOf(this.arr, this.arr.length);
+        return Arrays.copyOf(this.arr, this.size);
     }
 
     @Override
     public String operationDescription() {
-        return " SortDecorator. Applied MyComparator to sort the SmartArray.. ";
+        return "\nApplied MyComparator to sort the SmartArray." + this.smartArray.operationDescription();
     }
 
     @Override
     public int size() {
-        return this.arr.length;
+        return this.size;
     }
 }

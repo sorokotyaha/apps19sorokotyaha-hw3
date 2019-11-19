@@ -8,28 +8,35 @@ import java.util.Arrays;
 public class MapDecorator extends SmartArrayDecorator {
 
     private Object[] arr;
+    private int size;
 
     public MapDecorator(SmartArray sa, MyFunction func) {
         super(sa);
+
+        this.arr = this.map(sa, func);
+        this.size = this.arr.length;
+    }
+
+    public Object[] map(SmartArray sa, MyFunction func){
         Object[] objectArray = sa.toArray();
         for (int i = 0; i < objectArray.length; i++) {
             objectArray[i] = func.apply(objectArray[i]);
         }
-        this.arr = objectArray;
+        return objectArray;
     }
 
     @Override
     public Object[] toArray() {
-        return Arrays.copyOf(this.arr, this.arr.length);
+        return Arrays.copyOf(this.arr, this.size);
     }
 
     @Override
     public String operationDescription() {
-        return "MapDecorator. Applying MyFunction to all the elements of a SmartArray.. ";
+        return "\nApplying MyFunction to all the elements of a SmartArray." + this.smartArray.operationDescription();
     }
 
     @Override
     public int size() {
-        return this.arr.length;
+        return this.size;
     }
 }

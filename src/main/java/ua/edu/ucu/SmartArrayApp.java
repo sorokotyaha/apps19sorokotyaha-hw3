@@ -1,11 +1,6 @@
 package ua.edu.ucu;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
@@ -60,6 +55,35 @@ public class SmartArrayApp {
         // Hint: to convert Object[] to String[] - use the following code
         //Object[] result = studentSmartArray.toArray();
         //return Arrays.copyOf(result, result.length, String[].class);
+        MyPredicate pr = new MyPredicate() {
+            @Override
+            public boolean test(Object t) {
+                return ((Student)t).getGPA() >= 4 && ((Student)t).getYear() == 2;
+            }
+        };
+
+        MyComparator cmp = new MyComparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return ((Student)o1).getSurname().compareTo(((Student)o2).getSurname());
+            }
+        };
+
+        MyFunction func = new MyFunction() {
+            @Override
+            public Object apply(Object t) {
+                return ((Student)t).getSurname() + " " + ((Student)t).getName();
+            }
+        };
+
+        SmartArray sa = new BaseArray(students);
+
+        sa = new FilterDecorator(sa, pr);
+        sa = new SortDecorator(sa, cmp);
+        sa = new MapDecorator(sa, func);
+        sa = new DistinctDecorator(sa);
+
+        /*
         ArrayList<String> studentsList = new ArrayList<String>();
         for (int i = 0; i < students.length; i++) {
             if (students[i].getGPA() >= 4 && students[i].getYear() == 2) {
@@ -71,7 +95,9 @@ public class SmartArrayApp {
         String[] studentsArray = new String[studList.size()];
         for (int i = 0; i < studList.size(); i++) {
             studentsArray[i] = studList.get(i);
-        }
-        return studentsArray;
+        }*/
+        System.out.print(sa.operationDescription());
+        Object[] result = sa.toArray();
+        return Arrays.copyOf(result, result.length, String[].class);
     }
 }

@@ -9,33 +9,40 @@ import java.util.Arrays;
 // Tests every element and removes it if it doesn't satisfy MyPredicate
 public class FilterDecorator extends SmartArrayDecorator {
     private Object[] arr;
+    private int size;
 
     public FilterDecorator(SmartArray sa, MyPredicate pr) {
         super(sa);
+        this.arr = this.filter(sa, pr);
+        this.size = this.arr.length;
+    }
+
+    public Object[] filter(SmartArray sa, MyPredicate pr){
+
         Object[] array = sa.toArray();
         ArrayList<Object> arrayList = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            if (pr.test(array[i])) {
-                arrayList.add(array[i]);
+        for (Object o : array) {
+            if (pr.test(o)) {
+                arrayList.add(o);
             }
         }
-        this.arr = arrayList.toArray();
-        this.smartArray = new BaseArray(this.arr);
+        return arrayList.toArray();
 
     }
 
+
     @Override
     public Object[] toArray() {
-        return Arrays.copyOf(this.arr, this.arr.length);
+        return Arrays.copyOf(this.arr, this.size);
     }
 
     @Override
     public String operationDescription() {
-        return "FilterDecorator. Applied MyPredicate to filter the SmartArray.. ";
+        return "\nApplied MyPredicate to filter the SmartArray." + this.smartArray.operationDescription();
     }
 
     @Override
     public int size() {
-        return this.arr.length;
+        return this.size;
     }
 }
